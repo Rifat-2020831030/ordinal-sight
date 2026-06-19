@@ -55,16 +55,17 @@ const GlobalReachCard = () => (
   <div className="relative flex-shrink-0 w-full max-w-[451px] mx-auto lg:mx-0">
     {/* Main white card */}
     <div
-      className="feature-card relative overflow-hidden"
+      className="feature-card relative"
       style={{
         borderRadius: "34px",
         padding: "28px",
         minHeight: "451px",
         display: "flex",
         flexDirection: "column",
+        overflow: "visible",
       }}
     >
-      {/* Profile image placeholder top */}
+      {/* Profile image top */}
       <div
         className="rounded-2xl overflow-hidden mb-6"
         style={{ height: '176px' }}
@@ -78,34 +79,37 @@ const GlobalReachCard = () => (
           name="Felonious Gru"
           role="Python Developer"
           roleColor="#1E3E85"
+          avatar="/assets/guru.png"
         />
         <CandidatePill
           name="Mel Muselphiem"
           role="Front End Wizard"
           roleColor="#52B4DA"
+          avatar="/assets/guru.png"
           offset
         />
       </div>
-    </div>
 
-    {/* Floating RR icon badge */}
-    <div
-      className="absolute float-animation"
-      style={{
-        top: "-20px",
-        right: "-20px",
-        width: "91px",
-        height: "91px",
-        borderRadius: "45.5px",
-        background: "linear-gradient(132.559deg, #52B4DA 5.6%, #1E3E85 106%)",
-        boxShadow: "14px 41px 50px 0px rgba(49,89,211,0.07)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-      aria-hidden="true"
-    >
-      <img src="/assets/footer-rr-icon.svg" className="w-10 h-8" alt="RR Icon" />
+      {/* Floating RR icon badge — positioned right-center of card */}
+      <div
+        className="absolute float-animation"
+        style={{
+          top: "100px",
+          right: "-46px",
+          width: "91px",
+          height: "91px",
+          borderRadius: "45.5px",
+          background: "linear-gradient(132.559deg, #52B4DA 5.6%, #1E3E85 106%)",
+          boxShadow: "14px 41px 50px 0px rgba(49,89,211,0.07)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 10,
+        }}
+        aria-hidden="true"
+      >
+        <img src="/assets/footer-rr-icon.svg" className="w-10 h-8" alt="RR Icon" />
+      </div>
     </div>
 
     {/* Decorative dot */}
@@ -118,6 +122,7 @@ const GlobalReachCard = () => (
         height: "22px",
         borderRadius: "50%",
         background: "linear-gradient(135deg, #52B4DA, #1E3E85)",
+        zIndex: 10,
       }}
       aria-hidden="true"
     />
@@ -366,17 +371,20 @@ const CustomProfileCard = () => {
               style={{
                 background:
                   "linear-gradient(159.45787898572019deg, rgba(87,153,235,0.1) 5.6274%, rgba(159,116,251,0.1) 106.18%)",
-                color: i === tags.length - 1 ? "transparent" : "transparent",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
                 fontFamily: "Poppins, sans-serif",
                 fontWeight: 500,
                 fontSize: "12px",
                 lineHeight: "21px",
               }}
             >
-              {tag}
+              <span style={{
+                background: "linear-gradient(168.929deg, #336DA6 6.8672%, #1E3E85 106.04%)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
+              }}>
+                {tag}
+              </span>
             </span>
           ))}
         </div>
@@ -395,31 +403,18 @@ const CustomProfileCard = () => {
             style={{
               width: "44px",
               height: "44px",
-              borderRadius: "40px",
+              borderRadius: "50%",
               background:
                 "linear-gradient(132.559deg, #FFED43 5.6%, #F29939 106%)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
               flexShrink: 0,
+              overflow: "hidden",
             }}
           >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              aria-hidden="true"
-            >
-              <circle cx="12" cy="9" r="4" fill="white" opacity="0.85" />
-              <path
-                d="M4 21c0-4.418 3.582-8 8-8s8 3.582 8 8"
-                stroke="white"
-                strokeWidth="1.5"
-                fill="none"
-                opacity="0.8"
-              />
-            </svg>
+            <img
+              src="/assets/guru.png"
+              alt="Past Client"
+              style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
+            />
           </div>
           <div>
             <p
@@ -446,7 +441,7 @@ const CustomProfileCard = () => {
         </div>
       </div>
 
-      {/* Floating RR icon badge with profile image */}
+      {/* Floating Gru avatar badge — right side of card */}
       <div
         className="absolute float-animation"
         style={{
@@ -461,32 +456,21 @@ const CustomProfileCard = () => {
           alignItems: "center",
           justifyContent: "center",
           overflow: "hidden",
+          zIndex: 10,
         }}
         aria-hidden="true"
       >
-        <div
+        <img
+          src="/assets/guru.png"
+          alt="Gru"
           style={{
-            width: "75px",
-            height: "75px",
-            borderRadius: "37.5px",
-            background:
-              "linear-gradient(132.559deg, #52B4DA 5.6%, #1E3E85 106%)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            objectPosition: "center top",
+            borderRadius: "45.5px",
           }}
-        >
-          <svg
-            width="33"
-            height="33"
-            viewBox="0 0 22 22"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path d="M7 5L17 11L7 17V5Z" fill="white" />
-          </svg>
-        </div>
+        />
       </div>
     </div>
   );
@@ -498,11 +482,13 @@ function CandidatePill({
   role,
   roleColor,
   offset = false,
+  avatar,
 }: {
   name: string;
   role: string;
   roleColor: string;
   offset?: boolean;
+  avatar?: string;
 }) {
   return (
     <div
@@ -517,31 +503,39 @@ function CandidatePill({
         style={{
           width: "44px",
           height: "44px",
-          borderRadius: "40px",
+          borderRadius: "50%",
           background: "linear-gradient(132.559deg, #FFED43 5.6%, #F29939 106%)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
           flexShrink: 0,
+          overflow: "hidden",
         }}
       >
-        <img src="public/assets/guru.png" alt="Candidate" className="w-full h-full object-cover object-center" /> 
-        {/* <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          aria-hidden="true"
-        >
-          <circle cx="12" cy="9" r="4" fill="white" opacity="0.85" />
-          <path
-            d="M4 21c0-4.418 3.582-8 8-8s8 3.582 8 8"
-            stroke="white"
-            strokeWidth="1.5"
-            fill="none"
-            opacity="0.8"
+        {avatar ? (
+          <img
+            src={avatar}
+            alt={name}
+            style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }}
           />
-        </svg> */}
+        ) : (
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="9" r="4" fill="white" opacity="0.85" />
+            <path
+              d="M4 21c0-4.418 3.582-8 8-8s8 3.582 8 8"
+              stroke="white"
+              strokeWidth="1.5"
+              fill="none"
+              opacity="0.8"
+            />
+          </svg>
+        )}
       </div>
       <div>
         <p

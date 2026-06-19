@@ -41,7 +41,7 @@ function PricingCard({ plan }: PricingCardProps) {
   const freeFeatures = [
     { text: '1 Active Job', enabled: true },
     { text: 'Basic List Placement', enabled: true },
-    { text: 'Unlimited Job Applications', enabled: false },
+    { text: 'Unlimited Job Applicants', enabled: false },
     { text: 'Invite Anyone to Apply to Your Jobs', enabled: false },
   ];
 
@@ -59,9 +59,7 @@ function PricingCard({ plan }: PricingCardProps) {
         width: '100%',
         maxWidth: '500px',
         minHeight: '343px',
-        boxShadow: isFree
-          ? '14px 41px 100px 0px rgba(49,89,211,0.1)'
-          : '14px 41px 100px 0px rgba(87,153,235,0.2)',
+        boxShadow: '-15px 50px 150px 0px rgba(49,89,211,0.12)',
         border: `1px solid ${isFree ? '#F6F4FF' : 'rgba(87,153,235,0.15)'}`,
         background: '#ffffff',
       }}
@@ -93,27 +91,27 @@ function PricingCard({ plan }: PricingCardProps) {
           style={{
             width: '160px',
             minWidth: '160px',
+            margin: '32px 0 32px 32px',
             background: isFree
-              ? '#F4F7FE'
+              ? '#ECF2FF'
               : 'linear-gradient(160deg, #e8edff 0%, #d0d8ff 100%)',
+            borderRadius: '16px',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: '32px 16px',
+            padding: '20px 16px',
+            height: '180px',
+            alignSelf: 'flex-start',
           }}
         >
           <span
             style={{
               fontFamily: 'Poppins, sans-serif',
-              fontWeight: 700,
-              fontSize: isFree ? '45px' : '40px',
+              fontWeight: 600,
+              fontSize: isFree ? '32px' : '36px',
               lineHeight: '1',
-              color: isFree ? 'transparent' : '#1E3E85',
-              background: isFree ? 'linear-gradient(132.559deg, #52B4DA 5.6%, #1E3E85 106%)' : 'none',
-              backgroundClip: isFree ? 'text' : 'border-box',
-              WebkitBackgroundClip: isFree ? 'text' : 'border-box',
-              WebkitTextFillColor: isFree ? 'transparent' : 'initial',
+              color: isFree ? '#52B4DA' : '#1E3E85',
               textAlign: 'center',
             }}
           >
@@ -122,9 +120,9 @@ function PricingCard({ plan }: PricingCardProps) {
           <span
             style={{
               fontFamily: 'Poppins, sans-serif',
-              fontWeight: 700,
-              fontSize: '22px',
-              color: isFree ? 'rgba(17,20,45,0.45)' : '#52B4DA',
+              fontWeight: isFree ? 500 : 700,
+              fontSize: isFree ? '20px' : '22px',
+              color: isFree ? 'rgba(17,20,45,0.4)' : '#52B4DA',
               marginTop: '8px',
               textAlign: 'center',
             }}
@@ -144,8 +142,8 @@ function PricingCard({ plan }: PricingCardProps) {
                   style={{
                     fontFamily: 'Poppins, sans-serif',
                     fontWeight: 500,
-                    fontSize: '14px',
-                    color: 'rgba(17,20,45,0.8)',
+                    fontSize: '16px',
+                    color: feat.enabled ? 'rgba(50,52,69,0.9)' : '#808191',
                     lineHeight: '1.5',
                   }}
                 >
@@ -162,16 +160,16 @@ function PricingCard({ plan }: PricingCardProps) {
             className="mt-6 w-full text-center no-underline transition-all duration-200"
             style={{
               display: 'inline-block',
-              borderRadius: '12px',
+              borderRadius: '24px',
               padding: '16px',
-              fontSize: '16px',
+              fontSize: '20px',
               fontWeight: 600,
               fontFamily: 'Poppins, sans-serif',
               ...(isFree 
                 ? {
                     background: 'transparent',
                     color: '#1E3E85',
-                    border: '1.5px solid #1E3E85'
+                    border: '2px solid #52b4da'
                   }
                 : {
                     background: 'linear-gradient(132.559deg, #5799EB 5.6%, #9F74FB 106%)',
