@@ -1,4 +1,3 @@
-import React from "react";
 import { PlayIcon } from "./SharedIcons";
 
 export const CustomProfileCard = () => {

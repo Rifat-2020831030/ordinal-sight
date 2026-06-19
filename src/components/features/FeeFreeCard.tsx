@@ -1,4 +1,3 @@
-import React from "react";
 import { CheckIcon } from "./SharedIcons";
 
 export const FeeFreeCard = () => (

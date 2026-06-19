@@ -1,4 +1,3 @@
-import React from "react";
 import { CandidatePill } from "./CandidatePill";
 
 export const GlobalReachCard = () => (
