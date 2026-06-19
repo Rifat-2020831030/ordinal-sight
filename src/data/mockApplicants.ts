@@ -40,7 +40,7 @@ export const mockApplicants: Applicant[] = [
   },
   {
     id: '3',
-    name: 'John Smith',
+    name: 'Aaron Smith',
     role: 'UX Researcher',
     hourlyRateMin: 30,
     hourlyRateMax: 45,
@@ -52,9 +52,9 @@ export const mockApplicants: Applicant[] = [
   },
   {
     id: '4',
-    name: 'Alice Johnson',
+    name: 'Zara Johnson',
     role: 'Visual Designer',
-    hourlyRateMin: 60,
+    hourlyRateMin: 65,
     hourlyRateMax: 80,
     skills: ['Figma', 'Illustration', 'Animation'],
     status: 'new',
@@ -75,8 +75,32 @@ export const mockApplicants: Applicant[] = [
     experienceMatch: 80
   },
   {
+    id: '7',
+    name: 'Maria Chen',
+    role: 'Motion Designer',
+    hourlyRateMin: 55,
+    hourlyRateMax: 70,
+    skills: ['After Effects', 'Lottie', 'CSS Animations'],
+    status: 'new',
+    thumbnailUrl: '/assets/thumbnail.png',
+    englishProficiency: 88,
+    experienceMatch: 82
+  },
+  {
+    id: '8',
+    name: 'David Kim',
+    role: 'Brand Designer',
+    hourlyRateMin: 35,
+    hourlyRateMax: 48,
+    skills: ['Illustrator', 'Branding', 'Typography'],
+    status: 'new',
+    thumbnailUrl: '/assets/thumbnail.png',
+    englishProficiency: 75,
+    experienceMatch: 78
+  },
+  {
     id: '6',
-    name: 'Guy Hawkins',
+    name: 'Alice Williams',
     role: 'Senior UI/UX Designer',
     hourlyRateMin: 55,
     hourlyRateMax: 65,

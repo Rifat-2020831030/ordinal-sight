@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import type { RootState } from '../../store';
 import { updateFilter, resetFilters } from '../../store/applicantsSlice';
+import type { FilterState } from '../../store/applicantsSlice';
 
 export default function FilterPanel() {
   const dispatch = useDispatch();
@@ -38,8 +39,17 @@ export default function FilterPanel() {
 
           <h4 className="text-[#11142D] font-bold text-sm mb-3">Sort Pay By:</h4>
           <div className="relative mb-5">
-             <select className="w-full bg-[#F4F7FE] border-none rounded-xl p-4 text-sm outline-none appearance-none text-[#11142D]">
-               <option>Select Option</option>
+             <select
+               className="w-full bg-[#F4F7FE] border-none rounded-xl p-4 text-sm outline-none appearance-none text-[#11142D]"
+               value={filters.sortBy ?? ''}
+               onChange={(e) => dispatch(updateFilter({ sortBy: (e.target.value || null) as FilterState['sortBy'] }))}
+             >
+               <option value="">Select Option</option>
+               <option value="rate_asc">Rate Ascending</option>
+               <option value="rate_desc">Rate Descending</option>
+               <option value="name_asc">Name A→Z</option>
+               <option value="name_desc">Name Z→A</option>
+               <option value="newest">Newest</option>
              </select>
              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" stroke="#808191" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 1.5L6 6.5L11 1.5" /></svg>
@@ -79,17 +89,17 @@ export default function FilterPanel() {
           </div>
           <div className="flex gap-4 mb-6">
             <label className="flex items-center gap-2 cursor-pointer">
-              <div className={`w-5 h-5 rounded border ${filters.sortPayBy === 'ascending' ? 'bg-[#52B4DA] border-[#52B4DA]' : 'border-[#E4E4E4]'} flex items-center justify-center`}>
-                {filters.sortPayBy === 'ascending' && <svg width="10" height="8" viewBox="0 0 10 8" fill="none" stroke="white" strokeWidth="2"><path d="M1 4L3.5 6.5L9 1" /></svg>}
+              <div className={`w-5 h-5 rounded border ${filters.sortBy === 'rate_asc' ? 'bg-[#52B4DA] border-[#52B4DA]' : 'border-[#E4E4E4]'} flex items-center justify-center`}>
+                {filters.sortBy === 'rate_asc' && <svg width="10" height="8" viewBox="0 0 10 8" fill="none" stroke="white" strokeWidth="2"><path d="M1 4L3.5 6.5L9 1" /></svg>}
               </div>
-              <input type="checkbox" className="hidden" checked={filters.sortPayBy === 'ascending'} onChange={() => dispatch(updateFilter({ sortPayBy: filters.sortPayBy === 'ascending' ? null : 'ascending' }))} />
+              <input type="checkbox" className="hidden" checked={filters.sortBy === 'rate_asc'} onChange={() => dispatch(updateFilter({ sortBy: filters.sortBy === 'rate_asc' ? null : 'rate_asc' }))} />
               <span className="text-[#808191] text-sm">Ascending</span>
             </label>
             <label className="flex items-center gap-2 cursor-pointer">
-              <div className={`w-5 h-5 rounded border ${filters.sortPayBy === 'descending' ? 'bg-[#52B4DA] border-[#52B4DA]' : 'border-[#E4E4E4]'} flex items-center justify-center`}>
-                {filters.sortPayBy === 'descending' && <svg width="10" height="8" viewBox="0 0 10 8" fill="none" stroke="white" strokeWidth="2"><path d="M1 4L3.5 6.5L9 1" /></svg>}
+              <div className={`w-5 h-5 rounded border ${filters.sortBy === 'rate_desc' ? 'bg-[#52B4DA] border-[#52B4DA]' : 'border-[#E4E4E4]'} flex items-center justify-center`}>
+                {filters.sortBy === 'rate_desc' && <svg width="10" height="8" viewBox="0 0 10 8" fill="none" stroke="white" strokeWidth="2"><path d="M1 4L3.5 6.5L9 1" /></svg>}
               </div>
-              <input type="checkbox" className="hidden" checked={filters.sortPayBy === 'descending'} onChange={() => dispatch(updateFilter({ sortPayBy: filters.sortPayBy === 'descending' ? null : 'descending' }))} />
+              <input type="checkbox" className="hidden" checked={filters.sortBy === 'rate_desc'} onChange={() => dispatch(updateFilter({ sortBy: filters.sortBy === 'rate_desc' ? null : 'rate_desc' }))} />
               <span className="text-[#808191] text-sm">Descending</span>
             </label>
           </div>

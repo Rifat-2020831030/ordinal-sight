@@ -8,6 +8,8 @@ export interface FilterState {
   maxHourlyRate: number | null;
   maxAnnualSalary: number | null;
   sortPayBy: 'ascending' | 'descending' | null;
+  sortBy: 'newest' | 'name_asc' | 'name_desc' | 'rate_asc' | 'rate_desc' | null;
+  viewCount: number;
   language: string | null;
   country: string | null;
   aiRanking: boolean;
@@ -29,6 +31,8 @@ const initialState: ApplicantsState = {
     maxHourlyRate: null,
     maxAnnualSalary: null,
     sortPayBy: null,
+    sortBy: null,
+    viewCount: 25,
     language: null,
     country: null,
     aiRanking: false,
