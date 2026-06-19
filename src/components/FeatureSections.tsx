@@ -525,7 +525,8 @@ function CandidatePill({
           flexShrink: 0,
         }}
       >
-        <svg
+        <img src="public/assets/guru.png" alt="Candidate" className="w-full h-full object-cover object-center" /> 
+        {/* <svg
           width="24"
           height="24"
           viewBox="0 0 24 24"
@@ -540,7 +541,7 @@ function CandidatePill({
             fill="none"
             opacity="0.8"
           />
-        </svg>
+        </svg> */}
       </div>
       <div>
         <p

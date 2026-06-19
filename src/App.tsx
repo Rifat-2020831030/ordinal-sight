@@ -7,9 +7,11 @@ import PricingSection from "./components/PricingSection";
 import ScrollToTop from "./components/ScrollToTop";
 import SignUpCTA from "./components/SignUpCTA";
 import SmartFeaturesHeader from "./components/SmartFeaturesHeader";
+import JobApplicants from "./pages/JobApplicants";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 
-function App() {
+function LandingPage() {
   return (
     <div className="min-h-screen min-w-screen bg-white overflow-x-hidden">
       {/* Navigation */}
@@ -39,6 +41,17 @@ function App() {
       {/* Scroll-to-Top Button */}
       <ScrollToTop />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/dashboard" element={<JobApplicants />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
