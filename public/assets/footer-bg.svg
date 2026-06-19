@@ -1,0 +1,23 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 1440 634.414" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Background">
+<path id="Light blue Background" d="M1440 630.414V185.269C1440 185.269 1214 198.269 1017.5 159.269C821 120.269 634 50.7692 420 23.2692C206 -4.23077 0 0.769226 0 0.769226V630.414H1440Z" fill="url(#paint0_linear_7001_7174)"/>
+<path id="Dark Blue Background" d="M1440 634.414V189.269C1440 189.269 1214 202.269 1017.5 163.269C821 124.269 634 54.7692 420 27.2692C206 -0.230774 0 4.76923 0 4.76923V634.414H1440Z" fill="url(#paint1_linear_7001_7174)"/>
+<mask id="mask0_7001_7174" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="4" width="1440" height="631">
+<path id="Dark Blue Background_2" d="M1440 634.414V189.269C1440 189.269 1214 202.269 1017.5 163.269C821 124.269 634 54.7692 420 27.2692C206 -0.230774 0 4.76923 0 4.76923V634.414H1440Z" fill="var(--fill-0, white)"/>
+</mask>
+<g mask="url(#mask0_7001_7174)">
+<circle id="Top Right Elipses" opacity="0.05" cx="262" cy="262" r="262" transform="matrix(1 0 0 -1 1060 369.269)" fill="var(--fill-0, white)"/>
+<circle id="Bottom Left Elipses" opacity="0.02" cx="262" cy="262" r="262" transform="matrix(1 0 0 -1 -6 1036.27)" fill="var(--fill-0, white)"/>
+</g>
+</g>
+<defs>
+<linearGradient id="paint0_linear_7001_7174" x1="-644.712" y1="220.855" x2="-118.041" y2="-848.398" gradientUnits="userSpaceOnUse">
+<stop stop-color="#52B4DA"/>
+<stop offset="1" stop-color="#377999"/>
+</linearGradient>
+<linearGradient id="paint1_linear_7001_7174" x1="-644.712" y1="224.855" x2="-118.041" y2="-844.398" gradientUnits="userSpaceOnUse">
+<stop stop-color="#336DA6"/>
+<stop offset="1" stop-color="#1E3E85"/>
+</linearGradient>
+</defs>
+</svg>
