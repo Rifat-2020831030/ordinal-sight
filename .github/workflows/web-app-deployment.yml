@@ -1,12 +1,9 @@
-name: CF pages Deployment (web-app)
+name: CF pages Deployment (RemoteRecruit)
 
 on:
   push:
     branches:
-    - production
-    paths:
-    - apps/web-app/**/*
-    - .github/workflows/deploy-web-app.yml
+    - main
 
 jobs:
   publish:
@@ -16,14 +13,11 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 20
-    - run: npm install -g pnpm
-    - run: npm install -g turbo
-    - run: pnpm install --no-frozen-lockfile
-    - run: pnpm --filter ./apps/web-app... run build
-    - run: npm i -g wrangler@3.90.0
+    - run: npm install
+    - run: npm run build
     - name: Publish to Cloudflare Pages
       uses: cloudflare/wrangler-action@v3
       with:
         apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
         accountId: ${{ vars.CLOUDFLARE_ACCOUNT_ID }}
-        command: pages deploy "./apps/web-app/dist" --project-name=annotation-tool-dashboard
+        command: pages deploy "./dist" --project-name=remoterecruit
