@@ -1,73 +1,32 @@
-# React + TypeScript + Vite
+## Project Setup Instructions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Follow these steps to run the application locally:
 
-Currently, two official plugins are available:
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+2. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-## React Compiler
+3. **Open the app:**
+   Open your browser and navigate to the local URL provided by Vite (usually `http://localhost:5173/`).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Framework & Libraries Used
 
-## Expanding the ESLint configuration
+- **React (v19)** - Core UI library
+- **TypeScript** - For type safety and better developer experience
+- **Vite** - Extremely fast frontend build tool and development server
+- **Tailwind CSS (v4)** - Utility-first CSS framework for rapid styling
+- **Redux Toolkit** & **React-Redux** - For robust state management (used heavily in the dashboard for applicant filtering, sorting, and pagination)
+- **React Router DOM** - For application routing
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Known Issues & Limitations
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Mock Data**: The application currently relies on local mock data (`src/data/mockApplicants.ts`) to populate the dashboard. There is no live backend or database integration yet.
+- **Imperfections**: The landing page and dashboard components are largely responsive, but there may be minor styling imperfections on very small mobile viewports.
+- **AI Ranking Feature**: The AI Ranking toggle and sliders in the filter panel are visually functional but the data filtering logic for these specific premium criteria requires a backend AI service to function properly.
+- **Incomplete Routing**: Some links and buttons (especially in the sidebar) are currently placeholders and do not route to actual pages. Only the primary features requested for the dashboard are functional.
