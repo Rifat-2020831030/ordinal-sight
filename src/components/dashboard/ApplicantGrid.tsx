@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import type { RootState } from '../../store';
 import { updateFilter } from '../../store/applicantsSlice';
-import type { FilterState } from '../../store/applicantsSlice';
 import ApplicantCard from './ApplicantCard';
 
 /* ─── reusable dropdown ─── */
