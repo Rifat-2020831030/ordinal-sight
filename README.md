@@ -15,6 +15,23 @@ Follow these steps to run the application locally:
 3. **Open the app:**
    Open your browser and navigate to the local URL provided by Vite (usually `http://localhost:5173/`).
 
+## Docker Setup
+
+You can also run the application using Docker. This utilizes a multi-stage build, serving the optimized static assets via Nginx.
+
+1. **Build the Docker image:**
+   ```bash
+   docker build -t remoterecruit-app .
+   ```
+
+2. **Run the Docker container:**
+   ```bash
+   docker run -p 8080:80 remoterecruit-app
+   ```
+
+3. **Access the application:**
+   Open your browser and navigate to `http://localhost:8080/`.
+
 ## Framework & Libraries Used
 
 - **React (v19)** - Core UI library
